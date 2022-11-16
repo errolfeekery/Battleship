@@ -41,10 +41,14 @@ def ship_hits(game):
     for row in game:
         for column in row:
             if column == 'X':
-                counter +=
+                counter += 1
         return counter
 
 
-make_ships()
+make_ships(MY_SHIPS)
 goes = 10
-while goes > 0:
+print_game(MY_SHIPS)
+print_game(MY_GUESS)
+
+# while goes > 0:
+
