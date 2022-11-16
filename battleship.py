@@ -23,6 +23,9 @@ def guess_ship():
 def make_ships():
     for boat in range(5):
         boat_row, boat_column = randint(0, 7), randint(0, 7)
+        while game[boat_row][boat_column] == 'X':
+            boat_row, boat_column = randint(0, 7), randint(0, 7)
+
 
 
 def ship_hits(): 
