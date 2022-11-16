@@ -7,7 +7,7 @@ MY_GUESS = [[''] * 8 for x in range(8)]
 convert = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
 
 
-def print_game(game): 
+def print_game(game):
     print('    A B C D E F G H')
     print('    ---------------')
     row_count = 1
@@ -36,7 +36,7 @@ def guess_ship():
         return int(row) - 1, convert[column]
 
 
-def ship_hits(game): 
+def ship_hits(game):
     counter = 0
     for row in game:
         for column in row:
@@ -49,6 +49,4 @@ make_ships(MY_SHIPS)
 goes = 10
 print_game(MY_SHIPS)
 print_game(MY_GUESS)
-
 # while goes > 0:
-
