@@ -25,10 +25,15 @@ def make_ships(game):
 
 
 def guess_ship():
-    row = input('Place ship row 1-8').lower()
+    row = input('Place ship row 1-8')
     while row not in '12345678':
         pint('Enter a valid row')
-        row = input('Place ship row 1-8').lower()
+        row = input('Place ship row 1-8')
+    column = input('Place ship in column A-H').lower()
+    while column not in 'ABCDEFGH':
+        print('Enter a valid column')
+        column = input('Place ship in column A-H').lower()
+        return int(row) - 1, convert[column]
 
 
 def ship_hits(): 
