@@ -36,8 +36,13 @@ def guess_ship():
         return int(row) - 1, convert[column]
 
 
-def ship_hits(): 
-    pass
+def ship_hits(game): 
+    counter = 0
+    for row in game:
+        for column in row:
+            if column == 'X':
+                counter +=
+        return counter
 
 
 make_ships()
