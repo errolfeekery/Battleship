@@ -47,6 +47,24 @@ def ship_hits(game):
 
 make_ships(MY_SHIPS)
 goes = 10
-print_game(MY_SHIPS)
-print_game(MY_GUESS)
-# while goes > 0:
+while goes > 0:
+    print('This is Battleship')
+    print_game(MY_GUESS)
+    row, column = guess_ship()
+    if MY_GUESS[row][column] == '-':
+        print('Already selected')
+    elif MY_SHIPS[row][column] == 'X':
+        print('Direct hit!')
+        MY_GUESS[row][column] = "X"
+        goes -= 1
+    else:
+        print("Miss!")
+        MY_GUESS[row][column] = '-'
+        goes -= 1
+    if ship_hits(MY_GUESS) == 5:
+        print('You sunk my battleships!')
+        break
+    print('You have ' + str(goes) + ' goes left')
+    if goes == 0:
+        print('Game is over!')
+    break
