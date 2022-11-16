@@ -21,10 +21,11 @@ def guess_ship():
 
 
 def make_ships():
-    pass
+    for boat in range(5):
+        boat_row, boat_column = randint(0, 7), randint(0, 7)
 
 
-def ship_hits():
+def ship_hits(): 
     pass
 
 
