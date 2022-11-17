@@ -25,15 +25,15 @@ def create_ships(board):
 
 
 def get_ship_location():
-    row = input('Place ship row 1-8 ')
+    row = input('Enter a ship row 1-8 ')
     while row not in '12345678':
         print('Enter a valid row')
-        row = input('Place ship row 1-8')
-    column = input('Place ship in column A-H').upper()
+        row = input('Enter a ship row 1-8 ')
+    column = input('Enter a ship column A-H ').upper()
     while column not in 'ABCDEFGH':
         print('Enter a valid column')
-        column = input('Place ship in column A-H').upper()
-        return int(row) - 1, letters_to_numbers[column]
+        column = input('Please enter a ship column A-H ').upper()
+    return int(row) - 1, letters_to_numbers[column]
 
 
 def count_hits_ships(board):
@@ -47,29 +47,24 @@ def count_hits_ships(board):
 
 create_ships(HIDDEN_BOARD)
 turns = 10
-print_board(HIDDEN_BOARD)
-print_board(GUESS_BOARD)
-
-""" while goes > 0:
+while turns > 0:
     print('This is Battleship')
-    print_game(GUESS_BOARD)
-    row, column = get_boat_location()
+    print_board(GUESS_BOARD)
+    row, column = get_ship_location()
     if GUESS_BOARD[row][column] == '-':
         print('Already selected')
-    elif GUESS_BOARD[row][column] == 'X':
+    elif HIDDEN_BOARD[row][column] == 'X':
         print('Direct hit!')
         GUESS_BOARD[row][column] = "X"
-        goes -= 1
+        turns -= 1
     else:
         print("Miss!")
         GUESS_BOARD[row][column] = '-'
-        goes -= 1
-    if boat_hits(GUESS_BOARD) == 5:
+        turns -= 1
+    if count_hits_ships(GUESS_BOARD) == 5:
         print('You sunk my battleships!')
         break
-    print('You have ' + str(goes) + ' goes left')
-    if goes == 0:
+    print('You have ' + str(turns) + ' goes left')
+    if turns == 0:
         print('Game is over!')
     break
-
-"""
