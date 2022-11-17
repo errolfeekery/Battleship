@@ -4,7 +4,8 @@ from random import randint
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
 GUESS_BOARD = [[' '] * 8 for x in range(8)]
 
-letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
+letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3,
+                      'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
 
 def print_board(board):
@@ -48,10 +49,10 @@ def count_hits_ships(board):
 create_ships(HIDDEN_BOARD)
 turns = 10
 while turns > 0:
-    print('This is Battleship')
     print_board(GUESS_BOARD)
+    print_board(HIDDEN_BOARD)
     row, column = get_ship_location()
-    if GUESS_BOARD[row][column] == '/':
+    if GUESS_BOARD[row][column] == '-':
         print('Already selected')
     elif HIDDEN_BOARD[row][column] == 'X':
         print('Direct hit!')
@@ -67,4 +68,4 @@ while turns > 0:
     print('You have ' + str(turns) + ' goes left')
     if turns == 0:
         print('Game is over!')
-    break
+        break
