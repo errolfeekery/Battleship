@@ -26,14 +26,14 @@ def create_ships(board):
 
 
 def get_ship_location():
-    row = input('Enter a ship row 1-8 ')
+    row = input('Enter a ship row 1-8 /n')
     while row not in '12345678':
         print('Enter a valid row')
-        row = input('Enter a ship row 1-8 ')
-    column = input('Enter a ship column A-H ').upper()
+        row = input('Enter a ship row 1-8 /n')
+    column = input('Enter a ship column A-H /n').upper()
     while column not in 'ABCDEFGH':
         print('Enter a valid column')
-        column = input('Please enter a ship column A-H ').upper()
+        column = input('Please enter a ship column A-H /n').upper()
     return int(row) - 1, letters_to_numbers[column]
 
 
@@ -50,7 +50,6 @@ create_ships(HIDDEN_BOARD)
 turns = 10
 while turns > 0:
     print_board(GUESS_BOARD)
-    print_board(HIDDEN_BOARD)
     row, column = get_ship_location()
     if GUESS_BOARD[row][column] == '-':
         print('Already selected')
