@@ -51,7 +51,7 @@ while turns > 0:
     print('This is Battleship')
     print_board(GUESS_BOARD)
     row, column = get_ship_location()
-    if GUESS_BOARD[row][column] == '-':
+    if GUESS_BOARD[row][column] == '/':
         print('Already selected')
     elif HIDDEN_BOARD[row][column] == 'X':
         print('Direct hit!')
